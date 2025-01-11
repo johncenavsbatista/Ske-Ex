@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description"
+        content="Ske-Ex: A Lifelong Framework for Deformable Agent with Two Components: Skeleton Transform and Execution">
+    <!--   
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/> -->
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <!-- <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/> -->
+
+
+    <!-- <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG"> -->
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image"> -->
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="LLM, Robotic, Marph">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Ske-Ex</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">Ske-Ex: A Lifelong Framework for Deformable Agent with Two Components: Skeleton Transform and Execution
+                            </h1>
+                        <div class="is-size-5 publication-authors">
+                            <!-- Paper authors -->
+                            <span class="author-block">
+                                    Jing Zhao
+                                <sup>1</sup>,</span>
+                            <span class="author-block">
+                                Yinsong Wang
+                            <sup>1</sup>,</span>
+                            <span class="author-block">
+                                Yubo Yang
+                            <sup>2</sup>,</span>
+                            <span class="author-block">
+                                Shuyuan Zhang
+                            <sup>3</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=HXnkIkwAAAAJ" target="_blank">
+                                    Huaping Liu
+                                </a><sup>4,*</sup>,</span>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>
+                                North China Electric Power University,
+                            </span>
+                            <span class="author-block"><sup>2</sup>
+                                Shanghai Institute of Technology,
+                            </span>
+                            <span class="author-block"><sup>3</sup>
+                                Beijing University of Posts and Telecommunications,
+                            </span>  
+                            <span class="author-block"><sup>4</sup>
+                                Tsinghua University,
+                            </span>  
+                            <span class="author-block"><sup>*</sup>
+                                Corresponding Author
+                            </span>
+                                
+                        </div>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- Arxiv PDF link -->
+                                <span class="link-block">
+                                    <a href="" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+
+                                </span>
+
+                                <!-- Github link -->
+                                <span class="link-block">
+                                    <a href="" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+
+                                <!-- ArXiv abstract Link -->
+                                <span class="link-block">
+                                    <a href="" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- First Row: Image and Text -->
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <img src="static/images/1/1.png" alt="Research Focus" style="width: 100%;">
+                </div>
+                <div class="column is-half">
+                    <div class="content has-text-justified">
+                        <p style="font-size: 1.1em; line-height: 1.5em; text-align: left;">
+                            Our research focuses on deformable agents, with training based on joint optimization, consisting of two stages: Skeleton Transform and Execution.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row: Image and Text -->
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <video src="static/images/2/1.mp4" alt="Ske-Ex Framework" style="width: 100%;">
+                </div>
+                <div class="column is-half">
+                    <div class="content has-text-justified">
+                        <p style="font-size: 1.1em; line-height: 1.5em; text-align: left;">
+                            We propose a novel framework, Ske-Ex, which incorporates morphological knowledge in lifelong learning. This knowledge includes the significance of morphology, such as limb size and length.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Row: Text and Images -->
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <div class="content has-text-justified">
+                        <p style="font-size: 1.1em; line-height: 1.5em; text-align: left;">
+                            We now present the forgetting curves and generalization performance for order A, based on our benchmark.<br>
+                            Order A : Gill → Land → Step
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-one-third">
+                    <img src="static/images/3/1.png" alt="Graph 1" style="width: 100%;">
+                </div>
+                <div class="column is-one-third">
+                    <img src="static/images/3/2.png" alt="Graph 2" style="width: 100%;">
+                </div>
+                <div class="column is-one-third">
+                    <img src="static/images/3/3.png" alt="Graph 3" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第一部分 -->
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- <h2 class="title is-4">第一部分</h2> -->
+
+        <!-- 子部分 1 -->
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <img src="static/images/4/1/1.png" alt="Part 1 - Subsection 1" style="width: 100%;">
+            </div>
+            <div class="column is-two-thirds">
+                <video autoplay controls muted loop playsinline style="width: 100%;">
+                    <source src="static/images/4/1/1.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <!-- 子部分 2 -->
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <img src="static/images/4/2/1.png" alt="Part 1 - Subsection 2" style="width: 100%;">
+            </div>
+            <div class="column is-two-thirds">
+                <div class="columns">
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">MTL</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/4/2/1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">None</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/4/2/2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">RGO</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/4/2/3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">EWC</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/4/2/4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">LWF</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/4/2/5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 子部分 3 -->
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <img src="static/images/4/3/1.png" alt="Part 1 - Subsection 3" style="width: 100%;">
+            </div>
+            <div class="column is-two-thirds">
+                <div class="columns">
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">MTL</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/4/3/1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">None</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/4/3/2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">RGO</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/4/3/3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">EWC</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/4/3/4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">LWF</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/4/3/5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 第二部分 -->
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- <h2 class="title is-4">第二部分</h2> -->
+
+        <!-- 子部分 1 -->
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <img src="static/images/5/1/1.png" alt="Part 2 - Subsection 1" style="width: 100%;">
+            </div>
+            <div class="column is-two-thirds">
+                <div class="columns">
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">MTL</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/5/1/1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">None</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/5/1/2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">RGO</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/5/1/3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">EWC</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/5/1/4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">LWF</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/5/1/5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 子部分 2 -->
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <img src="static/images/5/2/1.png" alt="Part 2 - Subsection 2" style="width: 100%;">
+            </div>
+            <div class="column is-two-thirds">
+                <div class="columns">
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">MTL</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/5/2/1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">None</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/5/2/2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">RGO</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/5/2/3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">EWC</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/5/2/4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">LWF</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/5/2/5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 第三部分 -->
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- <h2 class="title is-4">第三部分</h2> -->
+
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <img src="static/images/6/1.png" alt="Part 3" style="width: 100%;">
+            </div>
+            <div class="column is-two-thirds">
+                <div class="columns">
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">MTL</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/6/1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">None</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/6/2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">RGO</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/6/3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">EWC</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/6/4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">LWF</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/6/5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 第四部分 -->
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- <h2 class="title is-4">第四部分</h2> -->
+
+        <div class="columns is-centered">
+            <div class="column is-full">
+                <div class="columns">
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">MTL</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/1.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/2.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">None</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/4.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/5.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/6.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">RGO</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/7.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/8.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/9.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">EWC</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/10.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/11.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/12.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: bold;">LWF</p>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/13.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/14.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay controls muted loop playsinline style="width: 100%;">
+                            <source src="static/images/7/15.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>
+@article{
+}
+      </code></pre>
+        </div>
+    </section>
+    <!--End BibTex citation -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+
+                        <p>
+                            This website is adapted from<a href="https://github.com/nerfies/nerfies.github.io">
+                                Nerfies</a>, licensed
+                            under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                Commons Attribution-ShareAlike 4.0 International License.</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Statcounter tracking code -->
+
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
